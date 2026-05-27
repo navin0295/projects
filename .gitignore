@@ -1,0 +1,9 @@
+*.npy
+*.h5
+*.pt
+*.pth
+*.ckpt
+data/
+venv/
+__pycache__/
+.DS_Store
