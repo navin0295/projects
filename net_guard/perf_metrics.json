@@ -1,0 +1,10 @@
+{
+  "timestamp": "2026-04-30T09:29:39.170878",
+  "elapsed_seconds": 365.17,
+  "total_packets": 1050,
+  "packets_per_second": 2.88,
+  "avg_detection_latency_ms": 333.83,
+  "max_detection_latency_ms": 5762.61,
+  "cpu_percent": 0.0,
+  "memory_mb": 488.73
+}

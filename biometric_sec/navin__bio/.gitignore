@@ -1,0 +1,12 @@
+.DS_Store
+__MACOSX/
+__pycache__/
+*.py[cod]
+*.db
+logs/
+data/
+models/
+evaluation_results.png
+*.h5
+*.weights.h5
+*.csv
