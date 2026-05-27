@@ -1,0 +1,360 @@
+2025-11-23 20:19:02,414 INFO Database initialized.
+2025-11-23 20:19:02,421 INFO role.created name=Admin
+2025-11-23 20:19:02,423 INFO role.created name=Editor
+2025-11-23 20:19:02,425 INFO role.created name=User
+2025-11-23 20:19:02,426 INFO role.created name=Guest
+2025-11-23 20:19:02,429 INFO permission.created name=create_item
+2025-11-23 20:19:02,430 INFO permission.created name=edit_item
+2025-11-23 20:19:02,432 INFO permission.created name=delete_item
+2025-11-23 20:19:02,434 INFO permission.created name=view_item
+2025-11-23 20:19:02,437 INFO role.permission.add role=Admin perm=create_item
+2025-11-23 20:19:02,440 INFO role.permission.add role=Admin perm=edit_item
+2025-11-23 20:19:02,442 INFO role.permission.add role=Admin perm=delete_item
+2025-11-23 20:19:02,445 INFO role.permission.add role=Admin perm=view_item
+2025-11-23 20:19:02,447 INFO role.permission.add role=Editor perm=create_item
+2025-11-23 20:19:02,449 INFO role.permission.add role=Editor perm=edit_item
+2025-11-23 20:19:02,451 INFO role.permission.add role=Editor perm=view_item
+2025-11-23 20:19:02,453 INFO role.permission.add role=User perm=view_item
+2025-11-23 20:19:02,455 INFO role.permission.add role=Guest perm=view_item
+2025-11-23 20:19:02,530 INFO user.set_password username=alice
+2025-11-23 20:19:02,533 INFO user.created username=alice
+2025-11-23 20:19:02,603 INFO user.set_password username=bob
+2025-11-23 20:19:02,605 INFO user.created username=bob
+2025-11-23 20:19:02,676 INFO user.set_password username=carol
+2025-11-23 20:19:02,678 INFO user.created username=carol
+2025-11-23 20:19:02,747 INFO user.set_password username=guest1
+2025-11-23 20:19:02,749 INFO user.created username=guest1
+2025-11-23 20:19:02,752 INFO user.role.assigned username=alice role=Admin
+2025-11-23 20:19:02,754 INFO user.role.assigned username=bob role=Editor
+2025-11-23 20:19:02,756 INFO user.role.assigned username=carol role=User
+2025-11-23 20:19:02,759 INFO user.role.assigned username=guest1 role=Guest
+2025-11-23 20:19:02,759 INFO Demo data seeded.
+2025-11-23 20:19:05,687 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-23 20:19:05,689 INFO [33mPress CTRL+C to quit[0m
+2025-11-23 20:20:00,067 INFO 127.0.0.1 - - [23/Nov/2025 20:20:00] "[33mGET / HTTP/1.1[0m" 404 -
+2025-11-23 20:20:00,193 INFO 127.0.0.1 - - [23/Nov/2025 20:20:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-23 20:21:18,364 INFO 127.0.0.1 - - [23/Nov/2025 20:21:18] "[31m[1mGET /login HTTP/1.1[0m" 405 -
+2025-11-23 20:34:07,551 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-23 20:34:07,552 INFO [33mPress CTRL+C to quit[0m
+2025-11-23 20:34:37,172 WARNING login.failed username=navin ip=127.0.0.1
+2025-11-23 20:34:37,172 INFO 127.0.0.1 - - [23/Nov/2025 20:34:37] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-23 20:35:39,737 ERROR Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 297, in login
+    token = generate_token(user)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 181, in generate_token
+    token = jwt.encode(payload, APP_SECRET, algorithm=JWT_ALGORITHM)
+            ^^^^^^^^^^
+AttributeError: module 'jwt' has no attribute 'encode'
+2025-11-23 20:35:39,745 INFO 127.0.0.1 - - [23/Nov/2025 20:35:39] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-23 20:36:37,141 INFO 127.0.0.1 - - [23/Nov/2025 20:36:37] "[31m[1mGET /login HTTP/1.1[0m" 405 -
+2025-11-23 20:38:35,304 ERROR Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 297, in login
+    token = generate_token(user)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 181, in generate_token
+    token = jwt.encode(payload, APP_SECRET, algorithm=JWT_ALGORITHM)
+            ^^^^^^^^^^
+AttributeError: module 'jwt' has no attribute 'encode'
+2025-11-23 20:38:35,308 INFO 127.0.0.1 - - [23/Nov/2025 20:38:35] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-23 20:39:08,848 ERROR Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 297, in login
+    token = generate_token(user)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 181, in generate_token
+    token = jwt.encode(payload, APP_SECRET, algorithm=JWT_ALGORITHM)
+            ^^^^^^^^^^
+AttributeError: module 'jwt' has no attribute 'encode'
+2025-11-23 20:39:08,849 INFO 127.0.0.1 - - [23/Nov/2025 20:39:08] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-23 20:40:48,598 ERROR Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 297, in login
+    token = generate_token(user)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 181, in generate_token
+    token = jwt.encode(payload, APP_SECRET, algorithm=JWT_ALGORITHM)
+            ^^^^^^^^^^
+AttributeError: module 'jwt' has no attribute 'encode'
+2025-11-23 20:40:48,601 INFO 127.0.0.1 - - [23/Nov/2025 20:40:48] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-23 20:41:00,473 ERROR Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 297, in login
+    token = generate_token(user)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 181, in generate_token
+    token = jwt.encode(payload, APP_SECRET, algorithm=JWT_ALGORITHM)
+            ^^^^^^^^^^
+AttributeError: module 'jwt' has no attribute 'encode'
+2025-11-23 20:41:00,475 INFO 127.0.0.1 - - [23/Nov/2025 20:41:00] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-23 20:41:33,470 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-23 20:41:33,471 INFO [33mPress CTRL+C to quit[0m
+2025-11-23 20:41:44,947 ERROR Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 297, in login
+    token = generate_token(user)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 181, in generate_token
+    token = jwt.encode(payload, APP_SECRET, algorithm=JWT_ALGORITHM)
+            ^^^^^^^^^^
+AttributeError: module 'jwt' has no attribute 'encode'
+2025-11-23 20:41:44,949 INFO 127.0.0.1 - - [23/Nov/2025 20:41:44] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-23 20:43:10,272 ERROR Exception on /login [POST]
+Traceback (most recent call last):
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/venv/lib/python3.13/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 297, in login
+    token = generate_token(user)
+  File "/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py", line 181, in generate_token
+    token = jwt.encode(payload, APP_SECRET, algorithm=JWT_ALGORITHM)
+            ^^^^^^^^^^
+AttributeError: module 'jwt' has no attribute 'encode'
+2025-11-23 20:43:10,281 INFO 127.0.0.1 - - [23/Nov/2025 20:43:10] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-23 20:45:54,667 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-23 20:45:54,667 INFO [33mPress CTRL+C to quit[0m
+2025-11-23 20:45:54,668 INFO  * Restarting with stat
+2025-11-23 20:45:54,909 WARNING  * Debugger is active!
+2025-11-23 20:45:54,918 INFO  * Debugger PIN: 876-313-410
+2025-11-23 20:46:06,425 INFO 127.0.0.1 - - [23/Nov/2025 20:46:06] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-23 20:47:27,712 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-23 20:47:27,713 INFO [33mPress CTRL+C to quit[0m
+2025-11-23 20:47:27,714 INFO  * Restarting with stat
+2025-11-23 20:47:27,950 WARNING  * Debugger is active!
+2025-11-23 20:47:27,956 INFO  * Debugger PIN: 876-313-410
+2025-11-23 20:47:33,725 INFO 127.0.0.1 - - [23/Nov/2025 20:47:33] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+2025-11-23 20:56:53,555 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-23 20:56:53,556 INFO [33mPress CTRL+C to quit[0m
+2025-11-23 20:56:53,557 INFO  * Restarting with stat
+2025-11-23 20:56:53,802 WARNING  * Debugger is active!
+2025-11-23 20:56:53,809 INFO  * Debugger PIN: 876-313-410
+2025-11-23 20:57:51,991 INFO 127.0.0.1 - - [23/Nov/2025 20:57:51] "POST /login HTTP/1.1" 200 -
+2025-11-23 20:58:39,230 INFO  * Detected change in '/Volumes/Crucial_navin/crypto/SecureFileEC/gui.py', reloading
+2025-11-23 20:58:39,326 INFO  * Restarting with stat
+2025-11-23 20:58:39,851 WARNING  * Debugger is active!
+2025-11-23 20:58:39,860 INFO  * Debugger PIN: 876-313-410
+2025-11-23 20:58:57,207 INFO 127.0.0.1 - - [23/Nov/2025 20:58:57] "GET /admin/users HTTP/1.1" 200 -
+2025-11-23 20:59:01,922 INFO 127.0.0.1 - - [23/Nov/2025 20:59:01] "GET /admin/roles HTTP/1.1" 200 -
+2025-11-23 21:00:12,224 INFO 127.0.0.1 - - [23/Nov/2025 21:00:12] "POST /login HTTP/1.1" 200 -
+2025-11-23 21:00:45,869 INFO  * Detected change in '/Volumes/Crucial_navin/crypto/SecureFileEC/gui.py', reloading
+2025-11-23 21:00:45,929 INFO  * Restarting with stat
+2025-11-23 21:00:46,356 WARNING  * Debugger is active!
+2025-11-23 21:00:46,363 INFO  * Debugger PIN: 876-313-410
+2025-11-23 21:00:55,783 INFO 127.0.0.1 - - [23/Nov/2025 21:00:55] "[31m[1mGET /admin/users HTTP/1.1[0m" 403 -
+2025-11-23 21:00:57,115 INFO 127.0.0.1 - - [23/Nov/2025 21:00:57] "[31m[1mGET /admin/roles HTTP/1.1[0m" 403 -
+2025-11-23 21:01:00,681 INFO 127.0.0.1 - - [23/Nov/2025 21:01:00] "[31m[1mGET /admin/roles HTTP/1.1[0m" 403 -
+2025-11-23 21:01:01,432 INFO 127.0.0.1 - - [23/Nov/2025 21:01:01] "[31m[1mGET /admin/users HTTP/1.1[0m" 403 -
+2025-11-23 23:03:57,379 INFO 127.0.0.1 - - [23/Nov/2025 23:03:57] "POST /login HTTP/1.1" 200 -
+2025-11-23 23:04:02,611 INFO 127.0.0.1 - - [23/Nov/2025 23:04:02] "GET /items HTTP/1.1" 200 -
+2025-11-23 23:04:05,588 INFO 127.0.0.1 - - [23/Nov/2025 23:04:05] "GET /items HTTP/1.1" 200 -
+2025-11-23 23:04:11,623 INFO 127.0.0.1 - - [23/Nov/2025 23:04:11] "GET /items HTTP/1.1" 200 -
+2025-11-23 23:04:18,557 INFO 127.0.0.1 - - [23/Nov/2025 23:04:18] "POST /items HTTP/1.1" 200 -
+2025-11-23 23:04:20,354 INFO 127.0.0.1 - - [23/Nov/2025 23:04:20] "GET /items HTTP/1.1" 200 -
+2025-11-23 23:04:21,188 INFO 127.0.0.1 - - [23/Nov/2025 23:04:21] "GET /items HTTP/1.1" 200 -
+2025-11-23 23:06:05,661 INFO 127.0.0.1 - - [23/Nov/2025 23:06:05] "GET /items HTTP/1.1" 200 -
+2025-11-23 23:06:14,858 INFO 127.0.0.1 - - [23/Nov/2025 23:06:14] "GET /admin/users HTTP/1.1" 200 -
+2025-11-23 23:06:28,928 INFO 127.0.0.1 - - [23/Nov/2025 23:06:28] "GET /admin/roles HTTP/1.1" 200 -
+2025-11-23 23:06:36,227 INFO 127.0.0.1 - - [23/Nov/2025 23:06:36] "GET /admin/users HTTP/1.1" 200 -
+2025-11-23 23:08:58,449 INFO 127.0.0.1 - - [23/Nov/2025 23:08:58] "GET /items HTTP/1.1" 200 -
+2025-11-23 23:09:36,380 INFO 127.0.0.1 - - [23/Nov/2025 23:09:36] "POST /login HTTP/1.1" 200 -
+2025-11-23 23:09:37,906 INFO 127.0.0.1 - - [23/Nov/2025 23:09:37] "GET /items HTTP/1.1" 200 -
+2025-11-23 23:09:39,086 INFO 127.0.0.1 - - [23/Nov/2025 23:09:39] "GET /items HTTP/1.1" 200 -
+2025-11-23 23:09:41,058 INFO 127.0.0.1 - - [23/Nov/2025 23:09:41] "[31m[1mGET /admin/users HTTP/1.1[0m" 403 -
+2025-11-23 23:10:21,879 INFO 127.0.0.1 - - [23/Nov/2025 23:10:21] "POST /login HTTP/1.1" 200 -
+2025-11-23 23:10:23,743 INFO 127.0.0.1 - - [23/Nov/2025 23:10:23] "GET /admin/users HTTP/1.1" 200 -
+2025-11-23 23:16:34,162 INFO 127.0.0.1 - - [23/Nov/2025 23:16:34] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-23 23:16:55,852 INFO 127.0.0.1 - - [23/Nov/2025 23:16:55] "POST /login HTTP/1.1" 200 -
+2025-11-27 10:34:25,312 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-27 10:34:25,313 INFO [33mPress CTRL+C to quit[0m
+2025-11-27 10:34:25,313 INFO  * Restarting with stat
+2025-11-27 10:34:25,530 WARNING  * Debugger is active!
+2025-11-27 10:34:25,538 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:34:34,809 INFO 127.0.0.1 - - [27/Nov/2025 10:34:34] "[33mGET / HTTP/1.1[0m" 404 -
+2025-11-27 10:34:34,957 INFO 127.0.0.1 - - [27/Nov/2025 10:34:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-27 10:37:13,236 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-27 10:37:13,236 INFO [33mPress CTRL+C to quit[0m
+2025-11-27 10:37:13,237 INFO  * Restarting with stat
+2025-11-27 10:37:13,466 WARNING  * Debugger is active!
+2025-11-27 10:37:13,472 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:37:17,578 INFO 127.0.0.1 - - [27/Nov/2025 10:37:17] "[33mGET / HTTP/1.1[0m" 404 -
+2025-11-27 10:38:22,608 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-27 10:38:22,608 INFO [33mPress CTRL+C to quit[0m
+2025-11-27 10:38:22,609 INFO  * Restarting with stat
+2025-11-27 10:38:22,831 WARNING  * Debugger is active!
+2025-11-27 10:38:22,837 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:38:27,738 INFO 127.0.0.1 - - [27/Nov/2025 10:38:27] "POST /login HTTP/1.1" 200 -
+2025-11-27 10:38:34,238 INFO 127.0.0.1 - - [27/Nov/2025 10:38:34] "GET /admin/users HTTP/1.1" 200 -
+2025-11-27 10:38:39,722 INFO 127.0.0.1 - - [27/Nov/2025 10:38:39] "GET /admin/roles HTTP/1.1" 200 -
+2025-11-27 10:38:42,952 INFO 127.0.0.1 - - [27/Nov/2025 10:38:42] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:38:46,035 INFO 127.0.0.1 - - [27/Nov/2025 10:38:46] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:41:11,987 INFO  * Detected change in '/Volumes/Crucial_navin/crypto/SecureFileEC/rbac.py', reloading
+2025-11-27 10:41:12,050 INFO  * Restarting with stat
+2025-11-27 10:41:12,452 WARNING  * Debugger is active!
+2025-11-27 10:41:12,458 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:42:06,010 INFO  * Detected change in '/Volumes/Crucial_navin/crypto/SecureFileEC/gui.py', reloading
+2025-11-27 10:42:06,083 INFO  * Restarting with stat
+2025-11-27 10:42:06,501 WARNING  * Debugger is active!
+2025-11-27 10:42:06,507 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:42:42,206 INFO 127.0.0.1 - - [27/Nov/2025 10:42:42] "POST /login HTTP/1.1" 200 -
+2025-11-27 10:44:41,089 INFO  * Detected change in '/Volumes/Crucial_navin/crypto/SecureFileEC/gui.py', reloading
+2025-11-27 10:44:41,159 INFO  * Restarting with stat
+2025-11-27 10:44:41,560 WARNING  * Debugger is active!
+2025-11-27 10:44:41,565 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:44:56,023 INFO 127.0.0.1 - - [27/Nov/2025 10:44:56] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 10:45:04,402 INFO  * Detected change in '/Volumes/Crucial_navin/crypto/SecureFileEC/gui.py', reloading
+2025-11-27 10:45:04,467 INFO  * Restarting with stat
+2025-11-27 10:45:04,853 WARNING  * Debugger is active!
+2025-11-27 10:45:04,858 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:45:21,865 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-27 10:45:21,865 INFO [33mPress CTRL+C to quit[0m
+2025-11-27 10:45:21,866 INFO  * Restarting with stat
+2025-11-27 10:45:22,084 WARNING  * Debugger is active!
+2025-11-27 10:45:22,088 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:45:41,810 INFO 127.0.0.1 - - [27/Nov/2025 10:45:41] "POST /login HTTP/1.1" 200 -
+2025-11-27 10:45:45,563 INFO 127.0.0.1 - - [27/Nov/2025 10:45:45] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:45:52,194 INFO 127.0.0.1 - - [27/Nov/2025 10:45:52] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:45:53,010 INFO 127.0.0.1 - - [27/Nov/2025 10:45:53] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:45:53,544 INFO 127.0.0.1 - - [27/Nov/2025 10:45:53] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:45:53,943 INFO 127.0.0.1 - - [27/Nov/2025 10:45:53] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:45:54,276 INFO 127.0.0.1 - - [27/Nov/2025 10:45:54] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:45:54,629 INFO 127.0.0.1 - - [27/Nov/2025 10:45:54] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:45:54,935 INFO 127.0.0.1 - - [27/Nov/2025 10:45:54] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:45:55,162 INFO 127.0.0.1 - - [27/Nov/2025 10:45:55] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:46:06,880 INFO 127.0.0.1 - - [27/Nov/2025 10:46:06] "POST /items HTTP/1.1" 200 -
+2025-11-27 10:46:12,311 INFO 127.0.0.1 - - [27/Nov/2025 10:46:12] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:46:18,728 INFO 127.0.0.1 - - [27/Nov/2025 10:46:18] "POST /items HTTP/1.1" 200 -
+2025-11-27 10:46:30,514 INFO 127.0.0.1 - - [27/Nov/2025 10:46:30] "GET /admin/users HTTP/1.1" 200 -
+2025-11-27 10:48:35,679 INFO  * Detected change in '/Volumes/Crucial_navin/crypto/SecureFileEC/gui.py', reloading
+2025-11-27 10:48:35,764 INFO  * Restarting with stat
+2025-11-27 10:48:36,209 WARNING  * Debugger is active!
+2025-11-27 10:48:36,215 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:48:42,247 INFO 127.0.0.1 - - [27/Nov/2025 10:48:42] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 10:48:54,213 INFO 127.0.0.1 - - [27/Nov/2025 10:48:54] "POST /login HTTP/1.1" 200 -
+2025-11-27 10:49:03,365 INFO 127.0.0.1 - - [27/Nov/2025 10:49:03] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 10:49:04,610 INFO 127.0.0.1 - - [27/Nov/2025 10:49:04] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 10:49:34,425 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-27 10:49:34,425 INFO [33mPress CTRL+C to quit[0m
+2025-11-27 10:49:34,426 INFO  * Restarting with stat
+2025-11-27 10:49:34,646 WARNING  * Debugger is active!
+2025-11-27 10:49:34,650 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:49:49,725 INFO 127.0.0.1 - - [27/Nov/2025 10:49:49] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 10:50:19,753 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-27 10:50:19,753 INFO [33mPress CTRL+C to quit[0m
+2025-11-27 10:50:19,754 INFO  * Restarting with stat
+2025-11-27 10:50:19,988 WARNING  * Debugger is active!
+2025-11-27 10:50:19,993 INFO  * Debugger PIN: 876-313-410
+2025-11-27 10:50:30,090 INFO 127.0.0.1 - - [27/Nov/2025 10:50:30] "POST /login HTTP/1.1" 200 -
+2025-11-27 10:50:39,391 INFO 127.0.0.1 - - [27/Nov/2025 10:50:39] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:50:45,808 INFO 127.0.0.1 - - [27/Nov/2025 10:50:45] "[31m[1mPOST /items HTTP/1.1[0m" 403 -
+2025-11-27 10:50:48,707 INFO 127.0.0.1 - - [27/Nov/2025 10:50:48] "GET /items HTTP/1.1" 200 -
+2025-11-27 10:50:50,723 INFO 127.0.0.1 - - [27/Nov/2025 10:50:50] "GET /items HTTP/1.1" 200 -
+2025-11-27 11:26:32,693 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-27 11:26:32,694 INFO [33mPress CTRL+C to quit[0m
+2025-11-27 11:26:32,695 INFO  * Restarting with stat
+2025-11-27 11:26:32,921 WARNING  * Debugger is active!
+2025-11-27 11:26:32,927 INFO  * Debugger PIN: 876-313-410
+2025-11-27 11:27:19,600 INFO 127.0.0.1 - - [27/Nov/2025 11:27:19] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:28:31,550 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-27 11:28:31,551 INFO [33mPress CTRL+C to quit[0m
+2025-11-27 11:28:31,551 INFO  * Restarting with stat
+2025-11-27 11:28:31,825 WARNING  * Debugger is active!
+2025-11-27 11:28:31,832 INFO  * Debugger PIN: 876-313-410
+2025-11-27 11:29:04,796 INFO 127.0.0.1 - - [27/Nov/2025 11:29:04] "POST /login HTTP/1.1" 200 -
+2025-11-27 11:29:45,705 INFO 127.0.0.1 - - [27/Nov/2025 11:29:45] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:29:53,436 INFO 127.0.0.1 - - [27/Nov/2025 11:29:53] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:30:02,900 INFO 127.0.0.1 - - [27/Nov/2025 11:30:02] "POST /login HTTP/1.1" 200 -
+2025-11-27 11:30:19,464 INFO 127.0.0.1 - - [27/Nov/2025 11:30:19] "POST /admin/create_user HTTP/1.1" 200 -
+2025-11-27 11:30:34,080 INFO 127.0.0.1 - - [27/Nov/2025 11:30:34] "[31m[1mPOST /admin/assign_role HTTP/1.1[0m" 400 -
+2025-11-27 11:31:00,531 INFO 127.0.0.1 - - [27/Nov/2025 11:31:00] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:31:23,020 INFO 127.0.0.1 - - [27/Nov/2025 11:31:23] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:33:49,254 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-27 11:33:49,254 INFO [33mPress CTRL+C to quit[0m
+2025-11-27 11:33:49,255 INFO  * Restarting with stat
+2025-11-27 11:33:49,493 WARNING  * Debugger is active!
+2025-11-27 11:33:49,501 INFO  * Debugger PIN: 876-313-410
+2025-11-27 11:34:03,843 INFO 127.0.0.1 - - [27/Nov/2025 11:34:03] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:34:27,420 INFO 127.0.0.1 - - [27/Nov/2025 11:34:27] "POST /login HTTP/1.1" 200 -
+2025-11-27 11:34:38,604 INFO 127.0.0.1 - - [27/Nov/2025 11:34:38] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:35:24,534 INFO 127.0.0.1 - - [27/Nov/2025 11:35:24] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:35:36,579 INFO 127.0.0.1 - - [27/Nov/2025 11:35:36] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:35:40,761 INFO 127.0.0.1 - - [27/Nov/2025 11:35:40] "POST /login HTTP/1.1" 200 -
+2025-11-27 11:35:48,418 INFO 127.0.0.1 - - [27/Nov/2025 11:35:48] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:36:14,051 INFO 127.0.0.1 - - [27/Nov/2025 11:36:14] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:38:57,583 INFO 127.0.0.1 - - [27/Nov/2025 11:38:57] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:39:15,377 INFO 127.0.0.1 - - [27/Nov/2025 11:39:15] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:39:19,552 INFO 127.0.0.1 - - [27/Nov/2025 11:39:19] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:39:32,042 INFO 127.0.0.1 - - [27/Nov/2025 11:39:32] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:39:33,032 INFO 127.0.0.1 - - [27/Nov/2025 11:39:33] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:39:38,582 INFO 127.0.0.1 - - [27/Nov/2025 11:39:38] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2025-11-27 11:39:45,717 INFO 127.0.0.1 - - [27/Nov/2025 11:39:45] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
